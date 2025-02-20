@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Star } from "../Star/";
+import { Star } from "../Star";
 import { CycleButton } from "../CycleButton";
 import "./Stars.css";
 
 export const Stars = () => {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const HandleClick = () => {
     setCount((prev) => (prev < 5 ? prev + 1 : 0));
   };
@@ -31,6 +31,3 @@ export const Stars = () => {
     );
   } else return <CycleButton onClick={HandleClick} />;
 };
-
-/*Если рейтинг меньше 1 или больше 5, или вообще не число, то компонент не должен иметь какого-либо представления в DOM.
-Звёзды рейтинга должны быть представлены тегом <ul> с классом card-body-stars. Для отображения символа звезды внутри тега <li> используйте компонент Star.*/
